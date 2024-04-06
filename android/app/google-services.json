@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "468435526864",
+    "firebase_url": "https://stationsantjoan-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "stationsantjoan",
+    "storage_bucket": "stationsantjoan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468435526864:android:e8a5fb3567279b7b592ad5",
+        "android_client_info": {
+          "package_name": "com.example.radarweather"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDbuDpR8zcH0pUkRRVC50-Zwp4EFjnf9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
