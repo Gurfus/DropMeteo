@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -15,6 +16,8 @@ import 'package:flutter/foundation.dart'
 /// );
 /// ```
 class DefaultFirebaseOptions {
+  var apiKey = '';
+  
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
       return web;
@@ -43,42 +46,58 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAotq9spXAFvp5ajhJEPozGSu78QyVPgzw',
-    appId: '1:468435526864:web:fd0635de7e509063592ad5',
-    messagingSenderId: '468435526864',
-    projectId: 'stationsantjoan',
-    authDomain: 'stationsantjoan.firebaseapp.com',
-    databaseURL: 'https://stationsantjoan-default-rtdb.europe-west1.firebasedatabase.app',
-    storageBucket: 'stationsantjoan.appspot.com',
-  );
+  static FirebaseOptions get web {
+    final apiKey = dotenv.env['API_FIREBASE'].toString();
+    final url = dotenv.env['URL_FIREBASE'].toString();
+    return FirebaseOptions(
+      apiKey: apiKey,
+      appId: '1:468435526864:web:fd0635de7e509063592ad5',
+      messagingSenderId: '468435526864',
+      projectId: 'stationsantjoan',
+      authDomain: 'stationsantjoan.firebaseapp.com',
+      databaseURL: url,
+      storageBucket: 'stationsantjoan.appspot.com',
+    );
+  }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCDbuDpR8zcH0pUkRRVC50-Zwp4EFjnf9w',
-    appId: '1:468435526864:android:e8a5fb3567279b7b592ad5',
-    messagingSenderId: '468435526864',
-    projectId: 'stationsantjoan',
-    databaseURL: 'https://stationsantjoan-default-rtdb.europe-west1.firebasedatabase.app',
-    storageBucket: 'stationsantjoan.appspot.com',
-  );
+  static FirebaseOptions get android {
+    final apiKey = dotenv.env['API_FIREBASE'].toString();
+    final url = dotenv.env['URL_FIREBASE'].toString();
+    return FirebaseOptions(
+      apiKey: apiKey,
+      appId: '1:468435526864:android:e8a5fb3567279b7b592ad5',
+      messagingSenderId: '468435526864',
+      projectId: 'stationsantjoan',
+      databaseURL: url,
+      storageBucket: 'stationsantjoan.appspot.com',
+    );
+  }
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDwbS7spAybYeSOEAR4YsxGJdUTaW5MrIc',
-    appId: '1:468435526864:ios:44897b7c48d54b1b592ad5',
-    messagingSenderId: '468435526864',
-    projectId: 'stationsantjoan',
-    databaseURL: 'https://stationsantjoan-default-rtdb.europe-west1.firebasedatabase.app',
-    storageBucket: 'stationsantjoan.appspot.com',
-    iosBundleId: 'com.ferranechaves.weather',
-  );
+  static FirebaseOptions get ios {
+    final apiKey = dotenv.env['API_FIREBASE'].toString();
+    final url = dotenv.env['URL_FIREBASE'].toString();
+    return FirebaseOptions(
+      apiKey: apiKey,
+      appId: '1:468435526864:ios:44897b7c48d54b1b592ad5',
+      messagingSenderId: '468435526864',
+      projectId: 'stationsantjoan',
+      databaseURL: url,
+      storageBucket: 'stationsantjoan.appspot.com',
+      iosBundleId: 'com.ferranechaves.weather',
+    );
+  }
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDwbS7spAybYeSOEAR4YsxGJdUTaW5MrIc',
-    appId: '1:468435526864:ios:d4a79e74d8d36043592ad5',
-    messagingSenderId: '468435526864',
-    projectId: 'stationsantjoan',
-    databaseURL: 'https://stationsantjoan-default-rtdb.europe-west1.firebasedatabase.app',
-    storageBucket: 'stationsantjoan.appspot.com',
-    iosBundleId: 'com.example.radarweather.RunnerTests',
-  );
+  static FirebaseOptions get macos {
+    final apiKey = dotenv.env['API_FIREBASE'].toString();
+    final url = dotenv.env['URL_FIREBASE'].toString();
+    return FirebaseOptions(
+      apiKey: apiKey,
+      appId: '1:468435526864:ios:d4a79e74d8d36043592ad5',
+      messagingSenderId: '468435526864',
+      projectId: 'stationsantjoan',
+      databaseURL: url,
+      storageBucket: 'stationsantjoan.appspot.com',
+      iosBundleId: 'com.example.radarweather.RunnerTests',
+    );
+  }
 }

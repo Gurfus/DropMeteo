@@ -42,3 +42,10 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+
+# ignore keys.xml
+/android/app/src/main/res/values/keys.xml
+
+/ios/Runner/AppDelegate.swift
+/ios/Runner/GoogleService-Info.plist

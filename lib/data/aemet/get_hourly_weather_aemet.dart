@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:http/http.dart' as http;
 
@@ -33,11 +34,11 @@ class GetHourlyWeatherAemet {
     var city = await getLocation(lat, lon);
     var cityId = await getIdPoblacion(city)!;
     cityId = cityId.first.values.first;
-
+    var apiKey = dotenv.env['API_KEY_AEMET'];
     cityId = cityId.toString().split('id');
 
     String apiHourlyAemet =
-        'https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/horaria/${cityId[1]}?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmZXJyYW5lY2hhdmVzQGdtYWlsLmNvbSIsImp0aSI6ImU3MzdhNGNlLWQ5NzUtNGUzZi04MzAyLWZhZTcxNjBiODgzNSIsImlzcyI6IkFFTUVUIiwiaWF0IjoxNjg3Mzc3MjIzLCJ1c2VySWQiOiJlNzM3YTRjZS1kOTc1LTRlM2YtODMwMi1mYWU3MTYwYjg4MzUiLCJyb2xlIjoiIn0.98Cj_MSHJPQHYuQDzlPzVjtvzYYjePzX1q5dsrlVX1Y';
+        'https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/horaria/${cityId[1]}?api_key=$apiKey';
     final response = await http.get(Uri.parse(apiHourlyAemet));
     var jasonString = jsonDecode(response.body);
     var data = jasonString['datos'];
