@@ -1,4 +1,3 @@
-
 class BmeWeather {
     String? fecha;
     String? hora;

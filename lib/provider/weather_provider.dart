@@ -100,8 +100,8 @@ class WeatherProvider extends ChangeNotifier {
     searchTimer = Timer(const Duration(seconds: 240), () {
       // Cancelar el stream del GPS si el tiempo máximo de búsqueda ha transcurrido
       positionStreamSubscription?.cancel();
-      print(
-          'Búsqueda de ubicación cancelada (tiempo máximo de búsqueda alcanzado)');
+      // print(
+      //     'Búsqueda de ubicación cancelada (tiempo máximo de búsqueda alcanzado)');
     });
     return positionStreamSubscription = Geolocator.getPositionStream(
             locationSettings:
@@ -185,17 +185,17 @@ class WeatherProvider extends ChangeNotifier {
       List<Location> locations = await locationFromAddress(cityName);
       if (locations.isNotEmpty) {
         Location location = locations.first;
-        double latitude = location.latitude;
-        double longitude = location.longitude;
-        print(
-            'Coordenadas de $cityName: Latitud: $latitude, Longitud: $longitude');
+        // double latitude = location.latitude;
+        // double longitude = location.longitude;
+        // print(
+        //     'Coordenadas de $cityName: Latitud: $latitude, Longitud: $longitude');
         return location;
       } else {
-        print('No se encontraron coordenadas para $cityName');
+        // print('No se encontraron coordenadas para $cityName');
         return null;
       }
     } catch (e) {
-      print('Error al obtener las coordenadas de $cityName: $e');
+      //print('Error al obtener las coordenadas de $cityName: $e');
       return null;
     }
   }

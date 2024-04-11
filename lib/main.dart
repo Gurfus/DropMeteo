@@ -9,13 +9,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
   const MyApp({Key? key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'RadarWeather',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.deepPurple,
@@ -23,26 +24,27 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: Container(
-         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(255, 1, 26, 64),
-              Color.fromARGB(255, 24, 143, 248)
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.topRight,
+      home: SafeArea(
+        child: Container(
+           decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 1, 26, 64),
+                Color.fromARGB(255, 24, 143, 248)
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.topRight,
+            ),
           ),
-        ),
-        child: SafeArea(
-          child: MultiProvider(
-            providers: [
-              ChangeNotifierProvider(create: (_) => WeatherProvider()),
-              ChangeNotifierProvider(create: (_) => SearchProvider())
-            ],
-            child: const HomePage(),
+          
+            child: MultiProvider(
+              providers: [
+                ChangeNotifierProvider(create: (_) => WeatherProvider()),
+                ChangeNotifierProvider(create: (_) => SearchProvider())
+              ],
+              child: const HomePage(),
+            ),
           ),
-        ),
       ),
     );
   }

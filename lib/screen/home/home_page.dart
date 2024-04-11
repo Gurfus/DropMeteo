@@ -56,6 +56,7 @@ class _HomePageState extends State<HomePage> {
     ];
 
     return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -82,20 +83,20 @@ class _HomePageState extends State<HomePage> {
           margin: const EdgeInsets.only(bottom: 0,right: 20,left: 20,top: 20),
           child: GNav(
             selectedIndex: _selectedItems,
-            rippleColor: Colors.black38,
-            hoverColor: Colors.blue[700]!,
+            rippleColor: const Color(0xFF2563eb),
+            hoverColor: const Color(0xFF1d4ed8),
             haptic: true,
             tabBorderRadius: 15,
-            tabActiveBorder: Border.all(color: Colors.blue[900]!, width: 1),
-            tabBorder: Border.all(color: Colors.black38, width: 1),
+            tabActiveBorder: Border.all(color: const Color(0xFF1e3a8a), width: 1),
+            tabBorder: Border.all(color: Colors.white70, width: 1),
             tabShadow: [
-              BoxShadow(color: Colors.grey.withOpacity(0.5), blurRadius: 8)
+              BoxShadow(color: const Color(0xffbfdbfe).withOpacity(0.2), blurRadius: 8)
             ],
             curve: Curves.easeOutExpo,
             duration: const Duration(milliseconds: 900),
             gap: 8,
             color: Colors.black,
-            activeColor: Colors.black54,
+            activeColor: Colors.white70,
             iconSize: 24,
             tabBackgroundColor: Colors.blue.withOpacity(0.1),
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
@@ -109,14 +110,17 @@ class _HomePageState extends State<HomePage> {
             tabs: const [
               GButton(
                 icon: LineIcons.home,
+                iconColor: Colors.white70,
                 text: 'Home',
               ),
               GButton(
                 icon: LineIcons.broadcastTower,
+                iconColor: Colors.white70,
                 text: 'Radar',
               ),
               GButton(
                 icon: LineIcons.search,
+                iconColor: Colors.white70,
                 text: 'Search',
               )
             ],

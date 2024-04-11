@@ -26,7 +26,7 @@ class TileV2 implements TileProvider {
         tiles[tileKey] = tileBytes;
         return Tile(256, 256, tileBytes);
       } catch (e) {
-        print(e.toString());
+        //print(e.toString());
         return Tile(256, 256, Uint8List(0)); // Tile vacío en caso de error
       }
     }
@@ -51,7 +51,7 @@ class TilesCache {
         if (currentIndex < tileProvider.timeStamps.length - 1) {
           currentIndex++;
         }
-        print(tileKey);
+       // print(tileKey);
       }
     }
 

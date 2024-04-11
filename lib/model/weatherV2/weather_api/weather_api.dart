@@ -1,5 +1,3 @@
-import 'package:radarweather/model/weatherV2/weather_api/day.dart';
-import 'package:radarweather/model/weatherV2/weather_api/forecastday.dart';
 
 import 'package:radarweather/model/weatherV2/weather_api/weather_forecast_days.dart';
 import 'package:radarweather/model/weatherV2/weather_api/weather_hourly.dart';

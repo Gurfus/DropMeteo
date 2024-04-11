@@ -121,7 +121,7 @@ class _SearchBarCustomState extends State<SearchBarCustom> {
             try {
               return await getSuggestions(pattern);
             } catch (e) {
-              print(e);
+             // print(e);
               throw 'Ciudad no enncontrada, use una de la lista';
             }
           },
@@ -152,7 +152,7 @@ class _SearchBarCustomState extends State<SearchBarCustom> {
           onSuggestionSelected: (String suggestion) async {
             _searchController.text = suggestion;
             // Realiza alguna acción cuando se selecciona una sugerencia
-            print('Ciudad seleccionada: $suggestion');
+            //print('Ciudad seleccionada: $suggestion');
             location = await searchProvider?.getCoordinates(suggestion);
             if (location != null) {
               // Si se obtienen las coordenadas correctamente, llamar a los métodos necesarios del WeatherProvider

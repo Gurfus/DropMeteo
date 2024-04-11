@@ -26,12 +26,35 @@ class ForecastDayList extends StatelessWidget {
     if (esAemet!) {
       DateTime dateTimeAemet = DateTime.parse(timeStamp);
       formattedTime = DateFormat('E').format(dateTimeAemet);
+      formattedTime = getDayTranslate(formattedTime);
     } else {
       DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(timeStamp * 1000);
       formattedTime = DateFormat('E').format(dateTime);
     }
     return formattedTime;
   }
+
+String getDayTranslate(final dayES) {
+  switch (dayES) {
+    case 'Mon':
+      return 'Lun';
+    case 'Tue':
+      return 'Mar';
+    case 'Wed':
+      return 'Mie';
+    case 'Thu':
+      return 'Jue';
+    case 'Fri':
+      return 'Vie';
+    case 'Sat':
+      return 'Sab';
+    case 'Sun':
+      return 'Dom';
+    default:
+      return 'Desconocido'; // Opcional: manejar casos no especificados
+  }
+}
+
 
   @override
   Widget build(BuildContext context) {

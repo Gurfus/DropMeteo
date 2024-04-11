@@ -54,6 +54,7 @@ class _ForecastSearchState extends State<ForecastSearch> {
   @override
   Widget build(BuildContext context) {
     searchProvider = context.watch<SearchProvider>();
+    weatherProvider = context.watch<WeatherProvider>();
     var cityStJoan = false;
     if (!searchProvider!.getIsloading()) {
       currentAemet = searchProvider?.getCurrenAemet();

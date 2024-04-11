@@ -49,7 +49,7 @@ class GetHourlyWeatherAemet {
           datas.map((model) => WeatherHourlyAemet.fromJson(model)));
 
       weatherAemet = WeatherAemet(weatherHourlyAemet: hourlyAemetDatas.first);
-      print(weatherAemet?.weatherHourlyAemet?.prediccion?.dia?.first);
+     // print(weatherAemet?.weatherHourlyAemet?.prediccion?.dia?.first);
       return weatherAemet!.weatherHourlyAemet;
     }
     return null;

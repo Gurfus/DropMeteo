@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:line_icons/line_icon.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -49,6 +48,7 @@ class _SearchState extends State<Search> {
                 ? Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      // ignore: avoid_unnecessary_containers
                       Container(
                         child: const Icon(
                           LineIcons.alternateMapMarked,
@@ -56,6 +56,7 @@ class _SearchState extends State<Search> {
                           size: 30,
                         ),
                       ),
+                      // ignore: sized_box_for_whitespace
                       Container(
                         height: 160,
                         child: const SearchBarCustom(),

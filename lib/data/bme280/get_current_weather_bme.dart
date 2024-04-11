@@ -15,6 +15,7 @@ class GetCurrentWeatherBme {
 
   Future<BmeWeather?> getCurrentWeatherBme() async {
    
+     // ignore: unused_local_variable
      final firebaseApp = await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
@@ -24,7 +25,7 @@ class GetCurrentWeatherBme {
     
       if (snapshot.exists) {
         final dynamicValue = snapshot.value as Map<dynamic, dynamic>;
-        print(snapshot.value);
+       // print(snapshot.value);
         final convertedValue = Map<String, dynamic>.from(dynamicValue);
         bmeWeather = BmeWeather.fromJson(convertedValue);
         return bmeWeather;
